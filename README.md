@@ -7,18 +7,18 @@ angular-fancy-url
 ### Just do
 
 ```js
-app.service(‘myService’, function($http) {
+app.service('myService', function($http) {
   // GET http://api.example.com/users
-  return $http.get(‘api://users’);
+  return $http.get('api://users');
 });
 ```
 
 ### No more
 
 ```js
-app.service(‘myService’, function($http, apiUrl) {
+app.service('myService', function($http, apiUrl) {
   // GET http://api.example.com/users
-  return $http.get(apiUrl + ‘/users’);
+  return $http.get(apiUrl + '/users');
 });
 ```
 
