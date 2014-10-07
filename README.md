@@ -34,3 +34,17 @@ bower install angular-fancy-url --save
 ```
 
 
+then
+
+```js
+angular.module('myApplication', [
+   'fancyURL'
+]).config(function($httpProvider, httpFancyURLProvider) {
+   $httpProvider.interceptors.push('httpFancyURL');
+
+   httpFancyURLProvider.use({
+      'api' : 'http://api.example.com/',
+   });
+})
+```
+
