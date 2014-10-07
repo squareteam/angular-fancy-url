@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Angular Fancy URL : example</title>
+   <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+   <script type="text/javascript" src="../lib/fancyURL.js"></script>
+   <!-- Add bootstrap -->
+</head>
+<body>
+
+   <div class="container" ng-app="test">
+      <div class="row">
+         <div class="col-xs-8 col-xs-push-2" ng-controller="testCtrl">
+            
+            <button class="primary" ng-click="sendRequest()">
+               Click me and look at Developer Tools network tab !
+            </button>
+            
+         </div>
+      </div>
+   </div>
+
+   <script type="text/javascript">
+
+      angular.module('test', [
+         'fancyURL'
+      ])
+         .config(function($httpProvider, httpFancyURLProvider) {
+            $httpProvider.interceptors.push('httpFancyURL');
+
+            httpFancyURLProvider.use({
+               'api' : 'http://api.example.com/',
+            });
+         })
+         .controller('testCtrl', function($scope, $http) {
+
+            $scope.sendRequest = function() {
+               $http.get('api://users');
+            };
+
+         });
+
+   </script>
+</body>
+</html>
