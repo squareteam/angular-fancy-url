@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: {
       // configurable paths
-      app: require('./bower.json').appPath || 'lib',
+      lib: 'lib',
       dist: 'dist'
     },
 
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/{,*/}*.js'
+        '<%= yeoman.lib %>/{,*/}*.js'
       ],
       test: {
         options: {
@@ -74,6 +74,12 @@ module.exports = function (grunt) {
       }
     },
 
+    concat : {
+      dist : {
+        src: ['<%= yeoman.lib %>/fancyURL.js'],
+        dest: '.tmp/angular-fancy-url.js',
+      }
+    },
 
     ngmin: {
       dist: {
@@ -89,8 +95,8 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= yeoman.dist %>/angular-coq.min.js': [
-            '<%= yeoman.dist %>/angular-coq.js'
+          '<%= yeoman.dist %>/angular-fancy-url.min.js': [
+            '<%= yeoman.dist %>/angular-fancy-url.js'
           ]
         }
       }
@@ -110,9 +116,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean:dist',
-    'useminPrepare',
+    'clean',
     'concat',
+    // 'concat',
     'ngmin',
     'uglify'
   ]);
