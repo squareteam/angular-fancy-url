@@ -1,5 +1,5 @@
-angular-fancy-url
-=================
+# angular-fancy-url [![Build Status](https://travis-ci.org/squareteam/angular-fancy-url.svg?branch=master)](https://travis-ci.org/squareteam/angular-fancy-url)
+
 
 *([Related Article](https://medium.com/french-make-beautiful/angular-fancy-configuration-tip-7210cde2b25f))*
 
