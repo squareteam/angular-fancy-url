@@ -3,7 +3,7 @@
   "authors" : [
     "Charly POLY <charly@squareteam.io>"
   ],
-  "version": "0.0.2",
+  "version": "0.0.1",
   "main": "./dist/angular-fancy-url.js",
   "dependencies": {
     "angular": "1.2.15"
